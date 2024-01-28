@@ -9,7 +9,7 @@ image: playa-navigator-location.jpg
 # Navigating at Burning Man
 It can be hard to get around at [Burning Man](https://burningman.org). Despite the clock-like road layout and posted [road signs](https://www.google.com/search?q=burning+man+road+signs&tbm=isch), it is easy to get confused.
 
-- Places you may want to revisit may not be within the city blocks. For example, it is easy to get find A & 7:00 again, but how about that cool art you saw in deep playa?
+- Places you may want to revisit may not be within the city blocks. For example, it is easy to find A & 7:00 again, but how about that cool art you saw in deep playa?
 - The road signs are ritually removed near the end of the week.
 - Landmarks and tall objects change, especially near the end of the week.
 - There are blue light markers for portos, but they can be hard to see among the huge visual noise of Burning Man.
@@ -36,7 +36,7 @@ The device should be simple, providing only these functions:
 # User Interface
 
 ## Location
-![Playa navigator device showing the location screen](assets/img/playa-navigator-location-front.jpg)
+[![](assets/img/playa-navigator-location-front.jpg)](assets/img/playa-navigator-location-front.jpg)
 Display the current location in a useful format.
 
 There are two address formats, which depend on where you are:
