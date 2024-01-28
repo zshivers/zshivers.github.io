@@ -29,3 +29,19 @@
 .related-posts a {
   text-decoration: none;
 }
+
+figure  {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+figure img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+figure figcaption {
+  text-align: center;
+  font-style: italic;
+}
