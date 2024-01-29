@@ -45,9 +45,9 @@ There are two address formats, which depend on where you are:
 
 The distance units automatically adjust: 0 to 9999 feet, then in miles.
 
-## Waypoint Naviation
+## Waypoint Navigation
 [![](assets/img/playa-navigator-waypoint.jpg)](assets/img/playa-navigator-waypoint.jpg)
-  - Show the distance and bearing to a waypoint stored in non-voltaile memory.
+  - Show the distance and bearing to a waypoint stored in non-volatile memory.
   - Single press to cycle through 5 possible waypoints.
   - Press and hold to store the current location to the waypoint.
 
@@ -82,14 +82,14 @@ The Pico GFX board didn't have the exact functionality I needed, so I made a "gl
 ## GNSS Receiver
 Aliexpress has a great, low-cost option for a [GNSS receiver](https://www.aliexpress.us/item/3256801517715702.html?gatewayAdapt=glo2usa) with a UART interface. It includes an antenna. Total per unit cost (including shipping from China) was $3.77 per unit for quantity 25. 🤯
 [![](assets/img/ATGM336H.jpg)](assets/img/ATGM336H.jpg)
-Surprisingly, I was able to find an working, English version of the [UI](https://github.com/zxcwhale/GnssToolKit3-binaries) used to configure the receiver.
+Surprisingly, I was able to find a working, English version of the [UI](https://github.com/zxcwhale/GnssToolKit3-binaries) used to configure the receiver.
 
 {% include figure.html url="assets/img/gnsstoolkit-screenshot.png" description="GnssToolkit UI which can be used to test the receiver." %}
 
 I ended up just using the receivers without any customization. It outputs plenty of info by default. I tried tweaking a few settings in an attempt to lower the power consumption (like number of constellations, update rate, filtering). Unfortunately, nothing I tried significantly lowered the power.
 
 ## Microcontroller
-I chose the [Raspberry Pi Pico](https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html), mostly because it allowed me to use the display breakout. However, RP2040s have an excellent price to performace ratio. Bought in quantity of 10s, they are only [about $4](https://shop.pimoroni.com/products/raspberry-pi-pico). The Pico has dual ARM Cortext M0 cores, 264kB of SRAM, 2MB of on-board flash memory, and native USB.
+I chose the [Raspberry Pi Pico](https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html), mostly because it allowed me to use the display breakout. However, RP2040s have an excellent price to performance ratio. Bought in quantities of 10s, they are only [about $4](https://shop.pimoroni.com/products/raspberry-pi-pico). The Pico has dual ARM Cortext M0 cores, 264kB of SRAM, 2MB of on-board flash memory, and native USB.
 
 ## Power button circuit
 The power circuitry is a bit tricky. I wanted to be able to turn the power on and off with one of the buttons included on the GFX pack board rather than adding additional hardware.
@@ -101,7 +101,7 @@ The pushbutton to ground on SWE activates Q1, providing power while pressed. Aft
 SWE is pulled down to ground on microcontroller startup (default pin state) with a value between 50 to 80 kΩ. Hence the strong pullup R1. When the microcontroller is powered down, leakage current spec is 1uA.
 
 ## Battery
-Battery life was important to this project, because remembering to charge a device out on the playa is definitely not top priority. I did not doing anything particularly sophisticated to select the battery - I found a [Lipo from Adafruit](https://www.adafruit.com/category/917) that roughly matched the dimensions of the LCD board and maximized capacity.
+Battery life was important to this project, because remembering to charge a device out on the playa is definitely not top priority. I did not do anything particularly sophisticated to select the battery - I found a [Lipo from Adafruit](https://www.adafruit.com/category/917) that roughly matched the dimensions of the LCD board and maximized capacity.
 
 Usage Time        | Backlight Setting   | Power [W] | Estimated Life [days]|
 ----------------- | ------------------- | --------- | -------------------- |
@@ -122,7 +122,7 @@ The internal assembly stacked multiple pieces:
 - Pico board + glue board.
 - Battery mounted onto a riser.
 
-The riser keeps the battery safely away from sharp pins underneath. I was worried that the battery could be pierced if there was no protected above and below. It has some channels to guide the battery's wires around to the right side, where it plugs into the glue PCB.
+The riser keeps the battery safely away from sharp pins underneath. I was worried that the battery could be pierced if there was no protection above and below. It has some channels to guide the battery's wires around to the right side, where it plugs into the glue PCB.
 
 The back cover has a groove and slot design, which gives some minimal sealing against dust and water ingress.
 
@@ -136,11 +136,11 @@ I found that the small tabs were brittle when 3D-printed. Also, the open source 
 {% include figure.html url="assets/img/playa-navigator-bike-mount-section.png" description="Section view of bike mount showing the locking features." %}
 
 ## Flexible Parts
-The assembly ended up needing three flexible parts: a cover flap for the charging port, buttons, a gasket between the display and the body. I used clear TPU. The clear buttons redirect some of the LCD's backlight, illuminating them.
+The assembly ended up needing three flexible parts: a cover flap for the charging port, buttons, and a gasket between the display and the body. I used clear TPU. The clear buttons redirect some of the LCD's backlight, illuminating them.
 
 {% include figure.html url="assets/img/playa-navigator-interior.jpg" description="Interior view with flexible components." %}
 
-Rather than using a screw or other fastener to keep the charging port cover flap connected to the body, I added a column of material that I melted it with a soldering iron. The bond is suprisingly strong - you would have to try hard to rip it off.
+Rather than using a screw or other fastener to keep the charging port cover flap connected to the body, I added a column of material that I melted with a soldering iron. The bond is suprisingly strong - you would have to try hard to rip it off.
 
 The LCD has a flat glass face. The TPU gasket pressed between the outer case and the glass keeps dust and water out.
 
@@ -175,13 +175,13 @@ For this project, the Navigator device must know:
 The true map has some additional nuance that I did not add - like the circular Rod's Road at 6:00.
 
 ## Bearing Algorithm
-The bearing that output by the GPS by default is very poor on this receiver. To get more stable readings, I wrote my own algorithm to track the user's bearing.
+The bearing signal output by the GPS by default is very poor on this receiver. To get more stable readings, I wrote my own algorithm to track the user's bearing.
 
 {% include figure.html url="assets/img/playa-navigator-bearing.svg" description="Bearing algorithm." %}
 
-The algorithm stores two points: a start and end location. The current bearing is the vector from start to end. Whenever the current location is deviates more than a configurable distance from stored end location, then `end = start` and `start = current`. 
+The algorithm stores two points: a start and end location. The current bearing is the vector from start to end. Whenever the current location deviates more than a configurable distance from stored end location, then `end = start` and `start = current`. 
 
-The adjustable minimum baseline distance makes it less suspectible to location noise.
+The adjustable minimum baseline distance makes it less susceptible to location noise.
 
 ## USB Configuration File
 These devices took too long to manufacture to just toss them after one year. Since the map changes each year, I added the ability to reconfigure them with a JSON file via USB mass-storage device.
@@ -223,7 +223,7 @@ Here is the 2023 configuration file:
 # Testing
 Doing major firmware upgrades or debugging at Burning Man was _not an option_. I invested time in unit testing and interactive testing. The unit tests cover the most critical parts of the code (coordinate conversions, playa address formatting).
 
-## Harware checkout test
+## Hardware Checkout Test
 I built about 20 of these devices, so a quick hardware go/no-go test was a time saver to detect issues early.
 
 {% include figure.html url="assets/img/playa-navigator-charging.jpg" description="Many Naviator devices running the hardware checkout firmware." %}
@@ -243,7 +243,7 @@ Running firmware on the host speeds up development. LVGL works on host machines 
 
 ![Startup animation when running the firmware on the host](assets/img/simulator-startup.gif)
 
-## Interactive Testing in the Broswer
+## Interactive Testing in the Browser
 Interactive tests can be a reasonable replacement for integration or unit tests that would otherwise be very sophisticated. I wanted to emulate being at any location on the playa, and checking that the display was showing the right address. It was perfect to test out if the bearing algorithm was giving the right directions to waypoints.
 
 ![](assets/img/interactive-test-location.gif)
@@ -253,7 +253,7 @@ Making this test required:
 - A web app that can show a map of the playa, and send emulated GPS coordinates at a cursor to a websocket.
 - Firmware running on the host that accepts GPS coordinates over a websocket.
 
-I re-purposed [this code](https://github.com/openlayers/ol-vite) combining OpenLayers and Vite to make the webapp. I added a bit of code to import the map data, add a cursor, and send the coordinates.
+I repurposed [this code](https://github.com/openlayers/ol-vite) combining OpenLayers and Vite to make the webapp. I added a bit of code to import the map data, add a cursor, and send the coordinates.
 
 To connect the firmware to the websocket, you could use a C/C++ websocket library. But it was easier to use [websocat](https://github.com/vi/websocat) and then pipe the output into `stdin`.
 ```bash
@@ -285,8 +285,8 @@ static auto io_thread = std::thread([&] {
 
 This device worked incredibly well out on the playa. It was super convenient to leave on my bike and fire up to move on to the next destination. The backlight was essential for night operation. 
 
-I used the navigation feature to get back to camp often. I used it occassionally to get back to a dancing spot after using a distant bathroom. 
+I used the navigation feature to get back to camp often. I used it occasionally to get back to a dancing spot after using a distant bathroom. 
 
 {% include figure.html url="assets/img/playa-navigator-bike-mounted.jpg" description="Playa Navigator mounted to my bike in dusty weather." %}
 
-The weather for the 2023 burn was wild, including several heavy rain storms. It continued to function after being out in the rain for hours. One Navigator was damaged when it was left inside a hot car. The PLA case melted enough to mess with the buttons. Its self-reported temperature just out of the car was 140°F!
+The weather for the 2023 burn was wild, with several heavy rain storms. It continued to function after being out in the rain for hours. One Navigator was damaged when left inside a hot car. The PLA case melted enough to mess with the buttons. Its self-reported temperature just out of the car was 140°F!
