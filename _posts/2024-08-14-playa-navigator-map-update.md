@@ -30,7 +30,7 @@ Every year, Burning Man's map changes slightly. For your Playa Navigator to work
    1. Press and hold the first button on the left. It will bring up the **DIAGNOSTICS** screen.
   [![](assets/img/playa-navigator-map-update/left-button.jpg)](assets/img/playa-navigator-map-update/left-button.jpg)
 
-   1. Press the same button several times until you get to the screen matching the image below. If it reads **Map:BM2024-USB**, you've upgraded successfully. If not, try these instructions again.
+   1. Press the same button several times until you get to the screen matching the image below. If it reads **Map:BM2025-R1**, you've upgraded successfully. If not, try these instructions again.
   [![](assets/img/playa-navigator-map-update/map-id.jpg)](assets/img/playa-navigator-map-update/map-id.jpg)
 
 ## Notes
