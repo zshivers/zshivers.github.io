@@ -10,3 +10,5 @@ permalink: /pn/
 
 # Coming Soon
 You're here early! Info about your device is coming soon.
+
+Instructions for upgrading the map will be posted here closer to this year's Burn, August 2026.
