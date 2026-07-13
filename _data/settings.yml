@@ -24,7 +24,7 @@ pagination:
   next_page: 'Newer'
   previous_page: 'Older'
 
-sharing_button_prompt: 'Feel free to share!'
+hide_post_share: true
 
 # related_posts: 'You may also enjoy:'
 
