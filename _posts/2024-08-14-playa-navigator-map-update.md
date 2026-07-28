@@ -8,10 +8,10 @@ hidden: true
 ---
 
 # Map Update
-Every year, Burning Man's map changes slightly. For your Playa Navigator to work for 2025, you need to update the map.
+Every year, Burning Man's map changes slightly. For your Playa Navigator to work for 2026, you need to update the map.
 
 # Instructions
-1. Download the <a href="assets/files/playa-navigator-map-update/map_config.json" download>2025 map</a>.
+1. Download the <a href="assets/files/playa-navigator-map-update/map_config.json" download>2026 map</a>.
 
 1. Connect the Playa Navigator to your computer with a USB cable.
 
@@ -30,7 +30,7 @@ Every year, Burning Man's map changes slightly. For your Playa Navigator to work
    1. Press and hold the first button on the left. It will bring up the **DIAGNOSTICS** screen.
   [![](assets/img/playa-navigator-map-update/left-button.jpg)](assets/img/playa-navigator-map-update/left-button.jpg)
 
-   1. Press the same button several times until you get to the screen matching the image below. If it reads **Map:BM2025-R1**, you've upgraded successfully. If not, try these instructions again.
+   1. Press the same button several times until you get to the screen matching the image below. If it reads **Map:BM2026-R1**, you've upgraded successfully. If not, try these instructions again.
   [![](assets/img/playa-navigator-map-update/map-id.jpg)](assets/img/playa-navigator-map-update/map-id.jpg)
 
 ## Notes

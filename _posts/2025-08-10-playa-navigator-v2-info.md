@@ -8,7 +8,8 @@ hidden: true
 permalink: /pn/
 ---
 
-# Coming Soon
-You're here early! Info about your device is coming soon.
+# Map Update for 2026
+Instructions [here]({% post_url 2026-07-27-playa-navigator-v2-map-update %})
 
-Instructions for upgrading the map will be posted here closer to this year's Burn, August 2026.
+# User Guide
+Coming soon!
