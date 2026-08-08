@@ -11,7 +11,7 @@ hidden: true
 Every year, Burning Man's map changes slightly. For your Playa Navigator to work for 2026, you need to update the map.
 
 # Instructions
-1. Download the <a href="assets/files/playa-navigator-map-update/map_config.json" download>2026 map</a>.
+1. Download the <a href="assets/files/playa-navigator-map-update-2026/map_config.json" download>2026 map</a>.
 
 1. Connect the Playa Navigator to your computer with a USB cable.
 
